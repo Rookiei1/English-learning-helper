@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>英语单词学习助手</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <div class="background-blur"></div>
+  <main class="container">
+    <header class="hero">
+      <h1>英语单词学习助手</h1>
+      <p>添加单词、中文释义，并通过四选一测验巩固记忆。</p>
+    </header>
+
+    <section class="card add-card">
+      <h2>添加新单词</h2>
+      <form id="word-form">
+        <div class="form-row">
+          <label for="english">英文单词</label>
+          <input id="english" name="english" type="text" placeholder="例如: apple" required />
+        </div>
+        <div class="form-row">
+          <label for="chinese">中文含义</label>
+          <input id="chinese" name="chinese" type="text" placeholder="例如: 苹果" required />
+        </div>
+        <button type="submit">保存单词</button>
+      </form>
+      <p class="tip">已保存 <span id="word-count">0</span> 个单词（浏览器本地存储）</p>
+    </section>
+
+    <section class="card quiz-card">
+      <div class="quiz-header">
+        <h2>训练测验</h2>
+        <button id="next-btn" class="secondary">下一题</button>
+      </div>
+      <div id="quiz-box">
+        <p id="question" class="question">点击“下一题”开始练习</p>
+        <div id="options" class="options"></div>
+      </div>
+      <p id="feedback" class="feedback"></p>
+      <div class="score">
+        <span>答对：<strong id="correct-count">0</strong></span>
+        <span>总题：<strong id="total-count">0</strong></span>
+      </div>
+    </section>
+
+    <section class="card list-card">
+      <h2>单词库</h2>
+      <ul id="word-list"></ul>
+    </section>
+  </main>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
